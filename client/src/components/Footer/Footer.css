@@ -1,0 +1,50 @@
+
+
+.f-container{
+    gap:2rem;
+    justify-content: space-between;
+    border-top: .5px solid rgba(0, 0, 0, 0.148);
+}
+.f-container>div{
+    
+    flex:1;
+    gap:2rem;
+}
+.f-left{
+    gap: 1rem;
+    justify-content: center;
+    align-items: center!important;
+    text-align: center;
+    /* padding-top: 1rem; */
+
+}
+.f-right{
+    gap: 1rem;
+    justify-content: center;
+    align-items: center!important;
+    text-align: center;
+    /* padding-top: 1rem; */
+
+}
+.socialMedia{
+    display: flex;
+    gap:2rem
+}
+
+.Icon:hover{
+    cursor: pointer;
+}
+@media (max-width: 768px) {
+    .f-container{
+        justify-content: center;
+        flex-direction: column;
+    }
+    .f-container>div{
+        align-items: center!important;
+        text-align: center;
+        
+    }
+    .f-right{
+        justify-content: center;
+    }
+}

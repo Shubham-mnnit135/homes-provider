@@ -1,0 +1,30 @@
+.form{
+  /* background-color: rgb(202, 119, 17); */
+  margin: 10px;
+  border: 2px solid rgba(219, 104, 28, 0.51);
+  border-radius: 10px;
+}
+
+.form >label{
+   color:rgb(203, 149, 24);
+   text-align: left;
+   font: 20px sans-serif;
+}
+
+.form > input {
+  font: 20px sans-serif;
+  border: 2px solid rgba(219, 104, 28, 0.51);
+  padding: 5px;
+  border-radius: 10px;
+  outline: none;
+  color:rgb(107, 102, 95)
+}
+
+@media (max-width: 640px) {
+  .form{
+      width: 80%;
+  }
+  .form >input{
+    width:100%;
+  }
+}

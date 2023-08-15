@@ -1,0 +1,69 @@
+generator client {
+    provider = "prisma-client-js"
+}
+
+datasource db {
+    provider = "mongodb"
+    url      = env("DATABASE_URL")
+}
+
+// model User {
+//     id               String      @id @default(auto()) @map("_id") @db.ObjectId
+//     name             String?
+//     email            String      @unique
+//     image            String?
+//     bookedVisits     Json[]
+//     favResidenciesID String[]    @db.ObjectId
+//     ownedResidencies Residency[] @relation("Owner")
+// }
+// realstateu
+// model Residency {
+//     id          String   @id @default(auto()) @map("_id") @db.ObjectId
+//     title       String
+//     description String
+//     price       Int
+//     address     String
+//     city        String
+//     country     String
+//     image       String
+//     facilities  Json
+//     userEmail   String
+//     owner       User     @relation("Owner", fields: [userEmail], references: [email])
+//     createdAt   DateTime @default(now())
+//     updatedAt   DateTime @updatedAt
+
+//     @@unique(fields: [address, userEmail])
+// }
+
+
+//realstate its mine
+
+model User {
+    id               String      @id @default(auto()) @map("_id") @db.ObjectId
+    name             String?
+    email            String      @unique
+    password         String
+    image            String?
+    bookedVisits     Json[]
+    favResidenciesID String[]    @db.ObjectId
+    ownedResidencies Residency[] @relation("Owner")
+}
+//realstate its mine
+model Residency {
+    id          String   @id @default(auto()) @map("_id") @db.ObjectId
+    title       String
+    description String
+    price       Int
+    address     String
+    city        String
+    country     String
+    image       String
+    facilities  Json
+    userEmail   String
+    bookDate    Json[]
+    owner       User     @relation("Owner", fields: [userEmail], references: [email])
+    createdAt   DateTime @default(now())
+    updatedAt   DateTime @updatedAt
+
+    @@unique(fields: [address, userEmail])
+}
